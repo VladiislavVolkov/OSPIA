@@ -1,0 +1,55 @@
+@import '../../../mixins.scss';
+@import '../../../scss/breakpoints.scss';
+
+.category {
+  @include flex(center, center);
+  background-color: #c6dedc;
+  background-image: linear-gradient(270deg, #c6dedc 0%, #89b7b4 100%);
+  color: #fdfdfd;
+  &__section {
+    @include flex(center, flex-start);
+    flex-direction: row;
+    width: 1200px;
+    margin: 30px 0;
+    &__left {
+      margin: 0 15px;
+      img {
+        width: 50px;
+        filter: opacity(0.5);
+      }
+    }
+    &__right {
+      @include flex(flex-start, space-between);
+      flex-direction: column;
+      &__top {
+        margin: 0 15px;
+        @include flex(center, space-between);
+        font-weight: bold;
+        font-size: 52px;
+        text-transform: lowercase;
+      }
+      &__bottom {
+        margin: 0 15px;
+        @include flex(center, space-between);
+        font-weight: normal;
+        font-size: 23px;
+      }
+    }
+    &__sale {
+      display: grid;
+      align-items: start;
+      gap: 20px;
+      margin: 0 15px;
+      .section__cardblock {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+  }
+}
+
+.sectionbg {
+  &__one {
+    background: #bf9eae;
+    color: #fdfdfd;
+  }
+}

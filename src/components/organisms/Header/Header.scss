@@ -1,0 +1,92 @@
+@import '../../../mixins.scss';
+
+header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 1009;
+}
+
+.header {
+  @include flex(center, center);
+  &__top {
+    width: 1200px;
+    @include flex(center, space-between);
+    height: 40px;
+    &__left {
+      margin: 0 15px;
+      @include flex(center, space-between);
+    }
+    &__right {
+      margin: 0 15px;
+      @include flex(center, space-between);
+      height: 100%;
+    }
+  }
+  &__bottom {
+    width: 1200px;
+    @include flex(center, space-between);
+    height: 110px;
+    &__logo img {
+      height: 59px;
+    }
+  }
+  &__content {
+    width: 33%;
+    margin: 0 15px;
+    position: relative;
+    @include flex(flex-end, flex-end);
+    flex-direction: column;
+    &__bottom {
+      font-size: 12px;
+      color: #929292;
+      margin-top: 5px;
+    }
+    &__top {
+      @include flex(center, flex-end);
+      &__item {
+        margin-left: 25px;
+        @include flex(flex-end, flex-end);
+        position: relative;
+        &__productcount {
+          position: absolute;
+          font-size: 12px;
+          color: #ffffff;
+          background: #df6262;
+          padding: 3px 4px 3px 4px;
+          border-radius: 14px;
+          border: 3px #ffffff solid;
+          top: -10px;
+          left: 12px;
+        }
+      }
+    }
+  }
+}
+
+.left {
+  @include flex(flex-start, flex-start);
+}
+
+.center {
+  @include flex(center, center);
+}
+
+.right {
+  @include flex(flex-end, flex-end);
+}
+
+.bottom_solid {
+  border-bottom: 1px solid rgb(193, 193, 193);
+  background: rgb(245, 245, 245);
+}
+
+.bottom_shadow {
+  box-shadow: 0px 10px 6px -5px rgba(34, 60, 80, 0.11);
+  -webkit-box-shadow: 0px 10px 6px -5px rgba(34, 60, 80, 0.11);
+  -moz-box-shadow: 0px 10px 6px -5px rgba(34, 60, 80, 0.11);
+}
+
+.icons {
+  width: 27px;
+}

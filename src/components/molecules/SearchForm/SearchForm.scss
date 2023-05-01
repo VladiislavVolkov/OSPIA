@@ -1,0 +1,35 @@
+@import '../../../mixins.scss';
+
+.search {
+  @include flex(center, center);
+  border: none;
+  background: none;
+  border: 1px solid #dcddde;
+  border-radius: 5px;
+  padding: 0 5px;
+  &__button {
+    border: none;
+    background: none;
+    opacity: 0.5;
+    img {
+      width: 20px;
+    }
+  }
+  &__input {
+    width: 170px;
+    border: none;
+    height: 30px;
+    background: none;
+    margin-right: 5px;
+    color: #9c9c9c;
+    &:focus {
+      color: #212529;
+      background: none;
+      outline: 0;
+      border: none;
+      ~ .search__button {
+        opacity: 1;
+      }
+    }
+  }
+}

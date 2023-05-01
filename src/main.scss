@@ -1,0 +1,45 @@
+@import 'reset.css';
+
+@import './scss/fonts.scss';
+@import './scss/colors.scss';
+@import './scss/typography.scss';
+@import './scss/breakpoints.scss';
+
+@import './mixins.scss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+:link, :visited { 
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  line-height: $mainLineHeight;
+  font-size: $mainFontSize;
+  color: $mainFontColor;
+  height: 100%;
+}
+
+.noscroll {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  font-weight: $mainFontWeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit; 
+}

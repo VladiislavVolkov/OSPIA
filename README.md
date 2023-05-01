@@ -1,2 +1,1 @@
-# OSPIA
-OPSIA
+# mentoring-simple-webpack-starter

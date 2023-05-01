@@ -1,0 +1,60 @@
+@import '../../../mixins.scss';
+
+.navlist {
+  @include flex(center, center);
+  color: #919191;
+  
+  &__li {
+    a {
+      background-image: linear-gradient(to right, #9ebfbd, #9ebfbd 50%, #a5a5a5 50%);
+      background-size: 200% 100%;
+      background-position: -100%;
+      display: inline-block;
+      padding: 5px 0;
+      position: relative;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 0.3s ease-in-out;
+    }
+    a::before {
+      content: '';
+      background: #9ebfbd;
+      display: block;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      transition: all 0.3s ease-in-out;
+    }
+    a:hover {
+      background-position: 0;
+    }
+    a:hover::before {
+      width: 100%;
+    }
+    .active a {
+      color: #595959;
+      -webkit-text-fill-color: currentcolor;
+      background-position: -100%;
+      border: 1px solid #c5c5c5;
+      padding: 7px;
+      border-radius: 5px;
+      background: #f5f5f5;
+    }
+    .active a::before {
+      display: none;
+    }
+  }
+  &__li:not(:last-child) {
+    margin-right: 25px;
+  }
+}
+
+.inline li {
+  display: inline;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

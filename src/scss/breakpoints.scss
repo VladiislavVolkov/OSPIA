@@ -1,0 +1,40 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .section__cardblock {
+    grid-template-columns: 1fr ;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .section__cardblock {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .section__cardblock {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .section__cardblock {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+}

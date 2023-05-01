@@ -1,0 +1,277 @@
+@import '../../../mixins.scss';
+@import '../../../scss/breakpoints.scss';
+
+.background_cart {
+  @include flex(center, center);
+}
+
+.sectioncart {
+  @include flex(flex-start, flex-start);
+  margin: 30px 0;
+  width: 1200px;
+  position: relative;
+  &__left {
+    margin: 25px 15px;
+    height: 100%;
+    width: 70%;
+  }
+  &__right {
+    margin: 25px 15px;
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+    width: 25%;
+    min-width: 240px;
+    border-radius: 5px;
+    background: #e9e7e7;
+    padding: 20px;
+    position: sticky;
+    top: 205px;
+    border: #e2e2e2 1px solid;
+    &__one {
+      @include flex(space-between, space-between);
+      font-size: 20px;
+      width: 100%;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #a8a8a8;
+      font-weight: bold;
+    }
+    &__two {
+      @include flex(space-between, space-between);
+      font-size: 14px;
+      width: 100%;
+      padding: 25px 0;
+    }
+    &__three {
+      @include flex(space-between, space-between);
+      font-size: 14px;
+      width: 100%;
+      color: #cb5151;
+      padding: 0 0 25px 0;
+      font-weight: bold;
+    }
+  }
+}
+
+.cartitem {
+  @include flex(flex-start, flex-start);
+  margin-bottom: 50px;
+  transition: 0.4s all ease-out;
+  border-bottom: #eee9e9 1px solid;
+  padding-bottom: 45px;
+  &__img {
+    @include flex(flex-start, flex-start);
+    width: 230px;
+    height: auto;
+    margin-right: 15px;
+    transition: 0.7s all ease-out;
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+  &__iteminfo {
+    @include flex(flex-end, flex-start);
+    flex-direction: column;
+    width: 100%;
+    min-height: 50px;
+    padding: 0px 20px;
+    border-radius: 5px;
+    &__top {
+      @include flex(baseline, space-between);
+      width: 100%;
+      padding: 10px 0;
+      margin-bottom: 25px;
+      &__one {
+        width: 60%;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #393939;
+        @include flex(flex-start, flex-start);
+        flex-direction: column;
+        span {
+          margin-top: 10px;
+          font-size: 14px;
+          text-transform: lowercase;
+          color: #a8a8a8;
+        }
+      }
+      &__two {
+        min-width: 110px;
+        @include flex(center, space-between);
+        margin: 0 20px;
+        button {
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          color: #000000;
+          cursor: pointer;
+          background-color: #f1f1f1;
+          border: 1px solid #bdbdbd;
+          padding: 0 10px;
+          transition: all 0.4s ease-in;
+          &:hover {
+            background-color: #2b2b2b;
+            color: #ffffff;
+          }
+        }
+      }
+      &__three {
+        width: 25%;
+        @include flex(flex-end, flex-end);
+        flex-direction: column;
+        font-size: 18px;
+        font-weight: 700;
+        color: #000000;
+        &__oldsum {
+          color: rgb(151, 150, 150);
+          font-size: 12px;
+          font-weight: normal;
+          text-decoration: line-through;
+          margin-bottom: 5px;
+        }
+        &__sale {
+          color: #cb5151;
+          font-size: 12px;
+          font-weight: normal;
+          margin-top: 3px;
+        }
+      }
+    }
+    &__bottom {
+      @include flex(center, flex-start);
+      flex-direction: row;
+      width: 100%;
+      border: #e2e2e2 1px solid;
+      border-radius: 5px;
+      background: #f9f9f9;
+      padding: 20px;
+      span {
+        color: #727274;
+        font-size: 14px;
+      }
+      &__ico {
+        width: 20px;
+        margin-right: 15px;
+      }
+      &__one,
+      &__two,
+      &__three {
+        margin-right: 20px;
+        @include flex(center, flex-start);
+      }
+      &__one {
+        font-weight: bold;
+      }
+      &__two {
+        border-right: #c3c3c3 1px solid;
+        padding-right: 20px;
+      }
+      &__three {
+        margin-right: 0px;
+      }
+    }
+    &__delete {
+      @include flex(center, center);
+      flex-direction: row;
+      margin-top: 20px;
+      color: #4e4e4f;
+      font-size: 12px;
+      cursor: pointer;
+      &__ico {
+        width: 12px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.cartitem__iteminfo__delete:hover ~ .cartitem__iteminfo {
+  background: #3f7a2c;
+}
+
+.cartpage {
+  width: 100%;
+  color: #ffffff;
+}
+
+.cartitem:last-child {
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+
+.cartitem:hover .cartitem__img {
+  filter: brightness(0.7);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  padding: 30px;
+  overflow-y: auto;
+  display: none;
+  z-index: 2000;
+  -webkit-box-shadow: 0px 5px 29px 12px rgba(34, 60, 80, 0.43);
+  -moz-box-shadow: 0px 5px 29px 12px rgba(34, 60, 80, 0.43);
+  box-shadow: 0px 5px 29px 12px rgba(34, 60, 80, 0.43);
+  &__main {
+    position: relative;
+    max-width: 700px;
+    background-color: #fff;
+    margin: auto;
+    color: #000;
+    border-radius: 16px;
+    padding: 30px;
+    cursor: default;
+    @include flex(center, center);
+    flex-direction: column;
+    text-align: center;
+    .finalclose {
+      background: #3f7a2c;
+    }
+  }
+  &__title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  &__container {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #727274;
+  }
+  &__close {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    outline: 1px solid transparent;
+    outline-offset: 3px;
+    transition: outline-color 0.15s ease-in-out;
+    border-radius: 3px;
+    padding: 0;
+    text-align: center;
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.modal__close:hover {
+  animation-name: rotation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

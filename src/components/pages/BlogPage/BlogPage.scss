@@ -1,0 +1,122 @@
+@import '../../../mixins.scss';
+
+.background_blog {
+  @include flex(center, center);
+  background: #ffffff;
+}
+
+.sectionblog {
+  @include flex(center, flex-start);
+  flex-direction: column;
+  width: 1200px;
+  position: relative;
+  margin: 1em 0em;
+  &__pagination {
+    padding-top: 35px;
+  }
+  &__archive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+    grid-gap: 0.5em;
+    grid-auto-flow: dense;
+    &__article {
+      padding: 1em;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+    :nth-child(1),
+    :nth-child(5n) {
+      grid-column: 1 / -2;
+    }
+  }
+}
+
+.article {
+  @include flex(stretch, space-between);
+  flex-direction: column;
+  height: 100%;
+  &__top {
+    @include flex(flex-start, space-between);
+    flex-direction: column;
+    position: relative;
+    &__image {
+      margin-bottom: 25px;
+      img {
+        width: 100%;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      img:not(:nth-child(5n)),
+      img:not(:nth-child(1)) {
+        min-height: 270px;
+      }
+    }
+    &__one {
+      @include flex(flex-start, space-between);
+      flex-direction: column;
+      position: relative;
+      &__heading {
+        color: #9d9d9d;
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      &__title {
+        font-size: 26px;
+        border-bottom: 1px solid #cacaca;
+        padding-bottom: 5px;
+      }
+    }
+    &__main {
+      @include flex(center, space-between);
+      background-color: #0000007a;
+      padding: 30px;
+      width: 100%;
+      position: absolute;
+      bottom: 28px;
+      color: #ffffff;
+      border-radius: 5px;
+      &__left {
+        &__heading {
+          color: #e1e1e1;
+          font-size: 16px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid #cacaca;
+        }
+        &__title {
+          font-size: 26px;
+          padding-top: 5px;
+        }
+      }
+      &__right {
+        img {
+          width: 30px;
+        }
+      }
+    }
+  }
+  &__bottom {
+    margin: 20px 0 0 0;
+    @include flex(flex-end, flex-end);
+    background: #f8f8f8;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #575757;
+  }
+}
+
+.article:hover .article__top__main{
+  animation-name: bg;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation: bg 500ms ease-in-out forwards;
+}
+
+@keyframes bg {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top:0;
+  }
+}

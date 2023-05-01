@@ -1,0 +1,12 @@
+@mixin flex($value1, $value2) {
+  display: flex;
+  align-items: $value1;
+  justify-content: $value2;
+}
+
+@mixin sliceByLine($lines: 4) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines; 
+}
