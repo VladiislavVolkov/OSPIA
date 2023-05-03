@@ -392,8 +392,8 @@ class CartPage extends Component {
                 <button class="form__btn" type="button">
                   Войти
                 </button>
-                <button class="modal__close">&#10006;</button>
-              </router-link>`
+              </router-link>
+              <button class="modal__close">&#10006;</button>`
           }
             
           </div>

@@ -1,1 +1,1 @@
-export const ADMIN = 'admin@admin.admin';
+export const ADMIN = `admin@admin.admin`;

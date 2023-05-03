@@ -103,7 +103,7 @@ class ProductCard extends Component {
             }" type="button" >
             ${
               this.state.idProductInCart
-                ? `<a href='${APP_ROUTES_MenuTop[2].cart}'>В корзине - ${this.state.idProductQuantity} шт.</a>`
+                ? `В корзине - ${this.state.idProductQuantity} шт.`
                 : `Добавить в корзину`
             }</button>
           </div>

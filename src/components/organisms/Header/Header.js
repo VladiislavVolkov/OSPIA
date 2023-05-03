@@ -13,6 +13,7 @@ import '../../molecules/SearchForm';
 import '../../../core/Router/Link';
 
 import './Header.scss';
+import { ADMIN } from '../../../constants/userRoles';
 
 class Header extends Component {
   constructor() {
@@ -69,7 +70,6 @@ class Header extends Component {
 
   render() {
     const user = JSON.parse(this.props.user);
-
     return `
         <header>
             <div class="header bottom_solid">
@@ -80,7 +80,7 @@ class Header extends Component {
                     </div>
 
                     <div class="header__top__right">
-                        <tc-menutopright user='${JSON.stringify(user)}'></tc-menutopright>
+                        <tc-menutopright></tc-menutopright>
                     </div>
 
                 </div>
@@ -114,7 +114,7 @@ class Header extends Component {
                         </div>
                       
                         ${
-                          user == null
+                          user?.email !== ADMIN
                             ? ``
                             : `<div class="header__content__top__item" >
                                 <router-link to="${APP_ROUTES_MenuTop[2].admin}">
