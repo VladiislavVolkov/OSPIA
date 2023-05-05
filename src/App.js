@@ -173,3 +173,4 @@ class App extends Component {
 }
 
 customElements.define('tc-app', App);
+

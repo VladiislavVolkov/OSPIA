@@ -39,7 +39,10 @@ class SalePage extends Component {
 
   noProducts = (products) => {
     if (products.length === 0) {
-      window.scrollTo(0, { behavior: 'smooth' });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
       this.innerHTML = `
         <section class="noproducts">
           <div class="noproducts__top">
@@ -73,7 +76,10 @@ class SalePage extends Component {
         currentPage: Number(evt.detail.page),
       };
     });
-    window.scrollTo(0, { behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   onSearch = (evt) => {
@@ -88,6 +94,10 @@ class SalePage extends Component {
         }),
         currentPage: 1,
       };
+    });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
     });
     this.noProducts(this.state.products);
   };

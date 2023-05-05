@@ -78,7 +78,10 @@ class CatalogPage extends Component {
         currentPage: Number(evt.detail.page),
       };
     });
-    window.scrollTo(0, { behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   onFilterProductsByCategory = (evt) => {
@@ -92,8 +95,10 @@ class CatalogPage extends Component {
         currentPage: 1,
       };
     });
-
-    window.scrollTo(0, { behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     if (this.state.products.length === 0) {
       console.log('нет товаров в категории.');
     }
@@ -112,12 +117,19 @@ class CatalogPage extends Component {
         currentPage: 1,
       };
     });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     this.noProducts(this.state.products);
   };
 
   noProducts = (products) => {
     if (products.length === 0) {
-      window.scrollTo(0, { behavior: 'smooth' });
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
       this.innerHTML = `
         <section class="noproducts">
           <div class="noproducts__top">

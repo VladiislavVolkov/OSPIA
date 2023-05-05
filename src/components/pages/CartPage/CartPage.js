@@ -79,6 +79,10 @@ class CartPage extends Component {
         .filter((item) => Boolean(item.quantity));
       localStorageService.setItem(APP_STORAGE_KEYS.cardData, filteredItems);
     }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   onAddItem = (evt) => {
