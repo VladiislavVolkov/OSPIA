@@ -77,7 +77,7 @@ class Card extends Component {
     const isSale = sale === 'yes';
     const isOldprice = oldprice !== 'undefined';
     const isCategory = category;
-    const mainPage = this.props.page === 'main';
+    const mainPage = this.props.page === 'main' || this.props.page === 'product';
     const salePage = this.props.page === 'sale';
 
     return `

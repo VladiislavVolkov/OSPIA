@@ -51,9 +51,8 @@ class ProductPage extends Component {
 
   sliceData() {
     const allProducts = this.state.productsFromDatabase;
-    const length = this.state.productsFromDatabase.length;
-    const start = length - this.state.quantity;
-    const end = length;
+    const start = 0;
+    const end = start + this.state.quantity;
     return allProducts.slice(start, end);
   }
 

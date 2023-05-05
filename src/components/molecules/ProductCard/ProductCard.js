@@ -17,7 +17,7 @@ class ProductCard extends Component {
   }
 
   addToCart = (evt) => {
-    if (evt.target.closest('.productitem__cart__buy')) {
+    if (evt.target.closest('.notcart')) {
       const allItems = localStorageService.getItem(APP_STORAGE_KEYS.cardData) ?? [];
       localStorageService.setItem(APP_STORAGE_KEYS.cardData, [...allItems, this.props]);
       this.setState((state) => {
@@ -99,7 +99,7 @@ class ProductCard extends Component {
           
           <div class="productitem__cart">
             <button class="productitem__cart__buy ${
-              this.state.idProductInCart ? `add` : ``
+              this.state.idProductInCart ? `add` : `notcart`
             }" type="button" >
             ${
               this.state.idProductInCart

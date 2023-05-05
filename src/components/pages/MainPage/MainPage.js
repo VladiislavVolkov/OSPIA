@@ -58,8 +58,8 @@ class MainPage extends Component {
   };
 
   sliceData() {
-    const start = this.state.products.length - this.state.quantity;
-    const end = this.state.products.length;
+    const start = 0;
+    const end = start + this.state.quantity;
     return this.state.products.slice(start, end);
   }
 

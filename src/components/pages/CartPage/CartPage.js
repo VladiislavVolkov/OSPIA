@@ -164,6 +164,7 @@ class CartPage extends Component {
       modal.style.cssText = `visibility: visible; opacity: 0;display: none;`;
       body.classList.remove('noscroll');
     }
+    body.classList.remove('noscroll');
   };
 
   isLoading = (isLoading) => {
